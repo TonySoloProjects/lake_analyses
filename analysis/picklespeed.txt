@@ -1,0 +1,15 @@
+Read from CSV, 2.6 sec
+Read from CSV, save pickle, 3.0 sec
+Read from CSV, with driver 3.95 sec 
+Read from CSV, save pickle, with driver 4.4 sec
+
+Looks like it takes 0.4 sec or so save the pickle
+
+From pickle, 0.62 sec
+From pickle, with driver 1.97 sec
+
+reading from pickle saves about 2.0 seconds of cal time
+
+
+
+
