@@ -6,10 +6,12 @@ Several figures include widget sliders to allow the user to select
 a day of interest to for depth profiles of key water quality measurements
 and interpolations.
 
-Notes
------
 Author: Tony Held, tony.held@gmail.com
 Created: 2020-05-14
+Copyright © 2020 Tony Held.  All rights reserved.
+
+Notes
+-----
 1)  Lake volume versus elevation data may not exist to the zero depth (completely dry) point.
     Water features below the lowest elevation measured will not be considered.
     For the Loch Lomond analysis, this detail is likely trivial since this only ignores
@@ -30,7 +32,7 @@ from matplotlib.patches import Polygon
 from matplotlib.widgets import Slider  # import the Slider widget
 from scipy import interpolate
 
-from tony_functions import MyTimer
+from utility_functions import MyTimer
 
 
 class LakeMeasurements:

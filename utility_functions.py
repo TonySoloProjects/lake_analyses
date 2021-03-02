@@ -1,3 +1,10 @@
+"""
+Collection of simple utility functions.
+Author: Tony Held, tony.held@gmail.com
+Created: 2020-05-14
+Copyright © 2020 Tony Held.  All rights reserved.
+"""
+
 import time
 
 
