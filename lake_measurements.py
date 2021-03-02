@@ -1,4 +1,10 @@
-"""Read in and process lake data to simulate/visualize water quality measurements.
+"""
+Simulate/visualize water quality measurements using interactive figures
+to inspect a lake's dissolved oxygen content and temperature.
+
+Several figures include widget sliders to allow the user to select
+a day of interest to for depth profiles of key water quality measurements
+and interpolations.
 
 Notes
 -----
@@ -13,6 +19,8 @@ Created: 2020-05-14
     On my machine it takes 1 to 2 seconds to make these calcs which is up to 90% of total run time.
 """
 
+import pickle
+
 # Import numerical array data types and plotting libraries
 import matplotlib.pyplot as plt
 import numpy as np
@@ -21,8 +29,8 @@ from matplotlib.collections import PatchCollection
 from matplotlib.patches import Polygon
 from matplotlib.widgets import Slider  # import the Slider widget
 from scipy import interpolate
+
 from tony_functions import MyTimer
-import pickle
 
 
 class LakeMeasurements:
@@ -152,7 +160,7 @@ class LakeMeasurements:
         Notes
         -----
         """
-        # todo - test calculations for accuracy
+        # todo - consider additional calculations to compare spreadsheet analysis accuracy
 
         # Find the midpoints and shape of the matrices to store interpolations
         midpoints = self.depth_meas.wse_interpolated.m_mid_elevation  # (feet)
@@ -212,7 +220,7 @@ class LakeMeasurements:
 
     def plot_contours(self):
         """Create contour maps showing temperature and dissolved oxygen at depth measurement times."""
-        # todo - test calculations for accuracy and compare results to Stephens figures
+        # todo - compare these calculations with spreadsheet calcs and figures
 
         # Shortcuts to sampling times, wse, and layer midpoints
         np_times = self.depth_meas.wse_interpolated.np_wse_times
@@ -1558,7 +1566,7 @@ class DepthMeasurements:
         Notes
         -----
         """
-        # todo - test calculations for accuracy and compare results to Stephens figures
+        # todo - compare results to spreadsheet figures and calcs
 
         # Find the midpoints and shape of the matrices to store interpolations
         midpoints = self.wse_interpolated.m_mid_elevation  # (feet)
@@ -1683,7 +1691,7 @@ class InterpFunctions:
         and cleaned up later.
     """
 
-    # todo - check to see if the interpolations are working properly
+    # todo - compare interpolation routines to spreadsheet analysis
 
     @staticmethod
     def interpolate_wse(wse_times, wse, new_times,
@@ -1802,10 +1810,11 @@ class InterpFunctions:
 
 
 if __name__ == '__main__':
-    # Main program to visualize Lake Data.
-    # Lake data are read from csv file, or optionally from pickle files to speed development.
-    # Primary calcs and visualizations are performed in mylake.driver().
-
+    """
+    Main program to visualize Lake Data.
+    Lake data are read from csv file, or optionally from pickle files to speed development.
+    Primary calcs and visualizations are performed in mylake.driver().
+    """
     my_timer = MyTimer("Main Program")
     # Option to read data or save data to/from pickle files to speed up development
     read_from_pickle = False
@@ -1828,7 +1837,8 @@ if __name__ == '__main__':
 
     mylake.driver()
     plt.show()
-    # Diagnostic routines to explore new functionality
+
+    # Optional diagnostic routines to explore new functionality
     # mylake._test_diagnostics()
 
     my_timer.toc()
