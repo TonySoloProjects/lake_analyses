@@ -887,7 +887,7 @@ class Bathymetry:
         ----------
         elevations : numpy.ndarray(M)
             Fixed elevations from bathymetric survey data.
-        wse : WaterSurfaceElevations
+        my_wse : WaterSurfaceElevations
             Water surface elevations to be evaluated
         """
 

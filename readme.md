@@ -21,7 +21,7 @@ a day of interest to for depth profiles of key water quality measurements
 and interpolations.
 
 Analysis is based on reading time series of surface and water depth measurements
-to interpolate/extrapolate measurement profiles of key water body characteristcs.
+to interpolate/extrapolate measurement profiles of key water body characteristics.
 
 ## Getting Started
 
@@ -31,7 +31,7 @@ The following packages are required:
 * numpy
 * pandas
 * matplotlib
-* scipi
+* scipy
 
 ## Usage
 
