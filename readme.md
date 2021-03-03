@@ -42,8 +42,8 @@ python lake_measurements.py
 ## Screenshots
 Figures with slider widgets to allow user to interactively select analysis
 day of interest:  
-![Image](figures/cross_section_slider_plot_view_1.png)  
-![Image](figures/cross_section_slider_plot_view_2.png)  
+![Image](figures/water_depth_profile_01.gif)  
+![Image](figures/water_depth_profile_02.gif)  
 
 Additional lake water quality visualizations:  
 ![Image](figures/lake_dam_profile.png)  
